@@ -1,5 +1,7 @@
 const express = require('express')
 const apicache = require('apicache')
+const bodyParser = require('body-parser')
+
 const path = require('path')
 const fs = require('fs')
 const app = express()
@@ -18,6 +20,7 @@ exec('npm info NeteaseCloudMusicApi version', (err, stdout, stderr) => {
       onlinePackageVersion +
         ',当前版本:' +
         package.version +
+        ' (Embedded Local MySQL Services) ' +
         ',请及时更新'
     )
   }
@@ -37,6 +40,12 @@ app.all('*', function(req, res, next) {
 })
 
 const onlyStatus200 = (req, res) => res.statusCode === 200
+
+// POST Body parser
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
 
 app.use(cache('2 minutes', onlyStatus200))
 

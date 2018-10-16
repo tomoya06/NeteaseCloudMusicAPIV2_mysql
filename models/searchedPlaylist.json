@@ -1,0 +1,21 @@
+{
+  "id": 109232251,
+  "name": "KENDRICK LAMAR",
+  "coverImgUrl": "http://p1.music.126.net/-lTCYnOpCU4SIWcAfKaXjQ==/109951163292726735.jpg",
+  "creator": {
+    "nickname": "1E-Go",
+    "userId": 18722473,
+    "userType": 4,
+    "authStatus": 1,
+    "expertTags": null,
+    "experts": null
+  },
+  "subscribed": false,
+  "trackCount": 67,
+  "userId": 18722473,
+  "playCount": 117859,
+  "bookCount": 1869,
+  "description": "2015.09.22",
+  "highQuality": false,
+  "alg": "alg_hot_artist"
+}

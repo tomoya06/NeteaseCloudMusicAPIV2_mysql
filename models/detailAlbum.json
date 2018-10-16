@@ -1,0 +1,409 @@
+{
+  "songs": [
+    {
+      "rtUrls": [],
+      "ar": [
+        {
+          "id": 14242,
+          "name": "星野源",
+          "alia": [
+            "ほしの げん"
+          ]
+        }
+      ],
+      "al": {
+        "id": 34886517,
+        "name": "恋",
+        "picUrl": "http://p1.music.126.net/yQsOoFeLBcOzlkCMLvnWHg==/18495984602893590.jpg",
+        "pic_str": "18495984602893590",
+        "pic": 18495984602893590
+      },
+      "st": 0,
+      "mv": 5392062,
+      "fee": 0,
+      "v": 7,
+      "a": null,
+      "m": {
+        "br": 160000,
+        "fid": 3420580740891765,
+        "size": 5068322,
+        "vd": -3.25
+      },
+      "cd": "1",
+      "cp": 663018,
+      "cf": "",
+      "dt": 253399,
+      "h": {
+        "br": 320000,
+        "fid": 3393092917115693,
+        "size": 10136599,
+        "vd": -3.67
+      },
+      "l": {
+        "br": 96000,
+        "fid": 3402988503925654,
+        "size": 3041011,
+        "vd": -3.3
+      },
+      "crbt": null,
+      "rtUrl": null,
+      "ftype": 0,
+      "pst": 0,
+      "t": 0,
+      "alia": [
+        "日剧《逃避虽可耻但有用》主题曲 / ドラマ『逃げるは恥だが役に立つ』主題歌"
+      ],
+      "pop": 100,
+      "rt": null,
+      "mst": 9,
+      "rtype": 0,
+      "rurl": null,
+      "no": 1,
+      "djId": 0,
+      "name": "恋",
+      "id": 432821964,
+      "privilege": {
+        "id": 432821964,
+        "fee": 0,
+        "payed": 0,
+        "st": 0,
+        "pl": 320000,
+        "dl": 320000,
+        "sp": 7,
+        "cp": 1,
+        "subp": 1,
+        "cs": false,
+        "maxbr": 320000,
+        "fl": 320000,
+        "toast": false,
+        "flag": 0,
+        "preSell": false
+      }
+    },
+    {
+      "rtUrls": [],
+      "ar": [
+        {
+          "id": 14242,
+          "name": "星野源",
+          "alia": [
+            "ほしの げん"
+          ]
+        }
+      ],
+      "al": {
+        "id": 34886517,
+        "name": "恋",
+        "picUrl": "http://p1.music.126.net/yQsOoFeLBcOzlkCMLvnWHg==/18495984602893590.jpg",
+        "pic_str": "18495984602893590",
+        "pic": 18495984602893590
+      },
+      "st": 0,
+      "mv": 0,
+      "fee": 0,
+      "v": 2,
+      "a": null,
+      "m": {
+        "br": 160000,
+        "fid": 1401877341853140,
+        "size": 4405857,
+        "vd": -1.71
+      },
+      "cd": "1",
+      "cp": 663018,
+      "cf": "",
+      "dt": 220264,
+      "h": {
+        "br": 320000,
+        "fid": 1401877341853138,
+        "size": 8811668,
+        "vd": -2.16
+      },
+      "l": {
+        "br": 96000,
+        "fid": 1401877341853141,
+        "size": 2643532,
+        "vd": -1.77
+      },
+      "crbt": null,
+      "rtUrl": null,
+      "ftype": 0,
+      "pst": 0,
+      "t": 0,
+      "alia": [],
+      "pop": 70,
+      "rt": null,
+      "mst": 9,
+      "rtype": 0,
+      "rurl": null,
+      "no": 2,
+      "djId": 0,
+      "name": "Drinking Dance",
+      "id": 432821965,
+      "privilege": {
+        "id": 432821965,
+        "fee": 0,
+        "payed": 0,
+        "st": 0,
+        "pl": 320000,
+        "dl": 320000,
+        "sp": 7,
+        "cp": 1,
+        "subp": 1,
+        "cs": false,
+        "maxbr": 320000,
+        "fl": 320000,
+        "toast": false,
+        "flag": 0,
+        "preSell": false
+      }
+    },
+    {
+      "rtUrls": [],
+      "ar": [
+        {
+          "id": 14242,
+          "name": "星野源",
+          "alia": [
+            "ほしの げん"
+          ]
+        }
+      ],
+      "al": {
+        "id": 34886517,
+        "name": "恋",
+        "picUrl": "http://p1.music.126.net/yQsOoFeLBcOzlkCMLvnWHg==/18495984602893590.jpg",
+        "pic_str": "18495984602893590",
+        "pic": 18495984602893590
+      },
+      "st": 0,
+      "mv": 0,
+      "fee": 0,
+      "v": 2,
+      "a": null,
+      "m": {
+        "br": 160000,
+        "fid": 1401877341853144,
+        "size": 5338951,
+        "vd": -1.99
+      },
+      "cd": "1",
+      "cp": 663018,
+      "cf": "",
+      "dt": 266936,
+      "h": {
+        "br": 320000,
+        "fid": 1401877341853142,
+        "size": 10677856,
+        "vd": -2.42
+      },
+      "l": {
+        "br": 96000,
+        "fid": 1401877341853145,
+        "size": 3203388,
+        "vd": -2.09
+      },
+      "crbt": null,
+      "rtUrl": null,
+      "ftype": 0,
+      "pst": 0,
+      "t": 0,
+      "alia": [],
+      "pop": 80,
+      "rt": null,
+      "mst": 9,
+      "rtype": 0,
+      "rurl": null,
+      "no": 3,
+      "djId": 0,
+      "name": "Contineus",
+      "id": 432821966,
+      "privilege": {
+        "id": 432821966,
+        "fee": 0,
+        "payed": 0,
+        "st": 0,
+        "pl": 320000,
+        "dl": 320000,
+        "sp": 7,
+        "cp": 1,
+        "subp": 1,
+        "cs": false,
+        "maxbr": 320000,
+        "fl": 320000,
+        "toast": false,
+        "flag": 0,
+        "preSell": false
+      }
+    },
+    {
+      "rtUrls": [],
+      "ar": [
+        {
+          "id": 14242,
+          "name": "星野源",
+          "alia": [
+            "ほしの げん"
+          ]
+        }
+      ],
+      "al": {
+        "id": 34886517,
+        "name": "恋",
+        "picUrl": "http://p1.music.126.net/yQsOoFeLBcOzlkCMLvnWHg==/18495984602893590.jpg",
+        "pic_str": "18495984602893590",
+        "pic": 18495984602893590
+      },
+      "st": 0,
+      "mv": 0,
+      "fee": 0,
+      "v": 2,
+      "a": null,
+      "m": {
+        "br": 160000,
+        "fid": 1401877341853148,
+        "size": 4828518,
+        "vd": -0.03
+      },
+      "cd": "1",
+      "cp": 663018,
+      "cf": "",
+      "dt": 241394,
+      "h": {
+        "br": 320000,
+        "fid": 1401877341853146,
+        "size": 9656991,
+        "vd": -0.46
+      },
+      "l": {
+        "br": 96000,
+        "fid": 1401877341853149,
+        "size": 2897129,
+        "vd": -0.06
+      },
+      "crbt": null,
+      "rtUrl": null,
+      "ftype": 0,
+      "pst": 0,
+      "t": 0,
+      "alia": [],
+      "pop": 55,
+      "rt": null,
+      "mst": 9,
+      "rtype": 0,
+      "rurl": null,
+      "no": 4,
+      "djId": 0,
+      "name": "雨音 (House ver.)",
+      "id": 432821967,
+      "privilege": {
+        "id": 432821967,
+        "fee": 0,
+        "payed": 0,
+        "st": 0,
+        "pl": 320000,
+        "dl": 320000,
+        "sp": 7,
+        "cp": 1,
+        "subp": 1,
+        "cs": false,
+        "maxbr": 320000,
+        "fl": 320000,
+        "toast": false,
+        "flag": 0,
+        "preSell": false
+      }
+    }
+  ],
+"code": 200,
+"album": {
+  "songs": [],
+  "paid": false,
+  "onSale": false,
+  "commentThreadId": "R_AL_3_34886517",
+  "briefDesc": "",
+  "publishTime": 1475596800000,
+  "blurPicUrl": "http://p2.music.126.net/yQsOoFeLBcOzlkCMLvnWHg==/18495984602893590.jpg",
+  "companyId": 0,
+  "pic": 18495984602893590,
+  "picUrl": "http://p2.music.126.net/yQsOoFeLBcOzlkCMLvnWHg==/18495984602893590.jpg",
+  "alias": [],
+  "picId": 18495984602893590,
+  "artist": {
+    "img1v1Id": 18686200114669624,
+    "topicPerson": 0,
+    "briefDesc": "",
+    "albumSize": 16,
+    "img1v1Url": "http://p2.music.126.net/VnZiScyynLG7atLIZ2YPkw==/18686200114669622.jpg",
+    "picUrl": "http://p2.music.126.net/AzOgCvRc7FgEjnZekMtJgg==/109951163436151288.jpg",
+    "alias": [
+      "ほしの げん"
+    ],
+    "trans": "",
+    "picId": 109951163436151300,
+    "musicSize": 107,
+    "name": "星野源",
+    "id": 14242,
+    "picId_str": "109951163436151288",
+    "img1v1Id_str": "18686200114669622"
+  },
+  "artists": [
+    {
+      "img1v1Id": 18686200114669624,
+      "topicPerson": 0,
+      "briefDesc": "",
+      "albumSize": 0,
+      "img1v1Url": "http://p2.music.126.net/VnZiScyynLG7atLIZ2YPkw==/18686200114669622.jpg",
+      "picUrl": "http://p2.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+      "alias": [],
+      "trans": "",
+      "picId": 0,
+      "musicSize": 0,
+      "name": "星野源",
+      "id": 14242,
+      "img1v1Id_str": "18686200114669622"
+    }
+  ],
+  "status": 0,
+  "subType": "录音室版",
+  "description": "大ヒットアルバム『YELLOW DANCER』に続く、待望の2016年第1弾シングルは、自身出演、2016年10月放映のTBS系火曜ドラマ『逃げるは恥だが役に立つ』主題歌!",
+  "tags": "",
+  "copyrightId": 0,
+  "company": "SPEEDSTAR",
+  "name": "恋",
+  "id": 34886517,
+  "type": "EP/Single",
+  "size": 4,
+  "picId_str": "18495984602893590",
+  "info": {
+    "commentThread": {
+      "id": "R_AL_3_34886517",
+      "resourceInfo": {
+        "id": 34886517,
+        "userId": -1,
+        "name": "恋",
+        "imgUrl": null,
+        "creator": null
+      },
+      "resourceType": 3,
+      "commentCount": 153,
+      "likedCount": 0,
+      "shareCount": 66,
+      "hotCount": 1,
+      "latestLikedUsers": null,
+      "resourceId": 34886517,
+      "resourceOwnerId": -1,
+      "resourceTitle": "恋"
+    },
+    "latestLikedUsers": null,
+    "liked": false,
+    "comments": null,
+    "resourceType": 3,
+    "resourceId": 34886517,
+    "commentCount": 153,
+    "likedCount": 0,
+    "shareCount": 66,
+    "threadId": "R_AL_3_34886517"
+  }
+}
+}

@@ -1,0 +1,6 @@
+{
+  "artist": ["artistId", "artistName", "artistDesc", "avatarUrl", "coverUrl", "nameTrans"],
+  "album": ["albumId", "albumName", "coverUrl", "albumType", "albumSubtype", "albumDesc", "publishTime"],
+  "song": ["songId", "songName", "songDuration", "albumId", "mp3url"],
+  "playlist": ["playlistId", "playlistName", "coverUrl", "playlistDesc", "isOfficial"]
+}

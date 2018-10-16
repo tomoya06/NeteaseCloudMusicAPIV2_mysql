@@ -1,0 +1,64 @@
+{
+  "name": "恋",
+  "id": 34886517,
+  "type": "EP/Single",
+  "size": 4,
+  "picId": 18495984602893590,
+  "blurPicUrl": "http://p3.music.126.net/yQsOoFeLBcOzlkCMLvnWHg==/18495984602893590.jpg",
+  "companyId": 0,
+  "pic": 18495984602893590,
+  "picUrl": "http://p3.music.126.net/yQsOoFeLBcOzlkCMLvnWHg==/18495984602893590.jpg",
+  "publishTime": 1475596800000,
+  "description": "",
+  "tags": "",
+  "company": "SPEEDSTAR",
+  "briefDesc": "",
+  "artist": {
+    "name": "星野源",
+    "id": 14242,
+    "picId": 109951163436151300,
+    "img1v1Id": 18686200114669624,
+    "briefDesc": "",
+    "picUrl": "http://p3.music.126.net/AzOgCvRc7FgEjnZekMtJgg==/109951163436151288.jpg",
+    "img1v1Url": "http://p4.music.126.net/VnZiScyynLG7atLIZ2YPkw==/18686200114669622.jpg",
+    "albumSize": 16,
+    "alias": [
+      "ほしの げん"
+    ],
+    "trans": "",
+    "musicSize": 107,
+    "topicPerson": 0,
+    "picId_str": "109951163436151288",
+    "img1v1Id_str": "18686200114669622",
+    "alia": [
+      "ほしの げん"
+    ]
+  },
+  "songs": null,
+  "alias": [],
+  "status": 0,
+  "copyrightId": 0,
+  "commentThreadId": "R_AL_3_34886517",
+  "artists": [
+    {
+      "name": "星野源",
+      "id": 14242,
+      "picId": 0,
+      "img1v1Id": 18686200114669624,
+      "briefDesc": "",
+      "picUrl": "http://p3.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+      "img1v1Url": "http://p4.music.126.net/VnZiScyynLG7atLIZ2YPkw==/18686200114669622.jpg",
+      "albumSize": 0,
+      "alias": [],
+      "trans": "",
+      "musicSize": 0,
+      "topicPerson": 0,
+      "img1v1Id_str": "18686200114669622"
+    }
+  ],
+  "paid": false,
+  "onSale": false,
+  "picId_str": "18495984602893590",
+  "containedSong": "",
+  "alg": "alg_album_basic_a"
+}

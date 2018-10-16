@@ -1,0 +1,48 @@
+{
+  "id": 432821964,
+  "name": "恋",
+  "artists": [
+    {
+      "id": 14242,
+      "name": "星野源",
+      "picUrl": null,
+      "alias": [],
+      "albumSize": 0,
+      "picId": 0,
+      "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+      "img1v1": 0,
+      "trans": null
+    }
+  ],
+  "album": {
+    "id": 34886517,
+    "name": "恋",
+    "artist": {
+      "id": 0,
+      "name": "",
+      "picUrl": null,
+      "alias": [],
+      "albumSize": 0,
+      "picId": 0,
+      "img1v1Url": "http://p1.music.126.net/6y-UleORITEDbvrOLV0Q8A==/5639395138885805.jpg",
+      "img1v1": 0,
+      "trans": null
+    },
+    "publishTime": 1475596800000,
+    "size": 4,
+    "copyrightId": 0,
+    "status": 0,
+    "picId": 18495984602893590
+  },
+  "duration": 253399,
+  "copyrightId": 663018,
+  "status": 0,
+  "alias": [
+    "日剧《逃避虽可耻但有用》主题曲 / ドラマ『逃げるは恥だが役に立つ』主題歌"
+  ],
+  "rtype": 0,
+  "ftype": 0,
+  "mvid": 5392062,
+  "fee": 0,
+  "rUrl": null
+}
