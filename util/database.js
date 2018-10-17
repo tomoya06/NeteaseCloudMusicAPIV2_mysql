@@ -48,9 +48,6 @@ function queryDBresponse(res, sql, key = 'results') {
   queryDBpromise(sql)
     .then((_res) => {
       result[key] = _res;
-      if (sql.indexOf('select')>=0 || sql.indexOf('SELECT')>=0) {
-        result['cnt'] = _res.length;
-      }
       result.code = 200;
       res.send(result)
     })
@@ -69,6 +66,15 @@ function queryDBpromise(sql) {
       if (err) { return reject(err) }
         conn.query(sql, (err, results, fields) => {
           if (err) { return reject(err)}
+
+          if (sql.indexOf('COUNT')>=0 || sql.indexOf('count')>=0) {
+            return resolve(results[0][Object.keys(results[0])[0]])
+          }
+
+          if (sql.indexOf('limit 1;')>=0 || sql.indexOf('LIMIT 1;')>=0) {
+            return resolve(results[0])
+          } 
+
           return resolve(results);
         })
     })
@@ -76,6 +82,7 @@ function queryDBpromise(sql) {
 }
 
 module.exports = {
+  queryDBpromise,
   queryDBresponse,
   multyQueryDBresponse,
 }
