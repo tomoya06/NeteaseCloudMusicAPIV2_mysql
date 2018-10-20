@@ -65,24 +65,21 @@ function queryDBpromise(sql) {
     pool.getConnection((err, conn) => {
       if (err) { return reject(err) }
         conn.query(sql, (err, results, fields) => {
+          conn.release();
           if (err) { return reject(err)}
-
-          if (sql.indexOf('COUNT')>=0 || sql.indexOf('count')>=0) {
-            return resolve(results[0][Object.keys(results[0])[0]])
-          }
-
-          if (sql.indexOf('limit 1;')>=0 || sql.indexOf('LIMIT 1;')>=0) {
-            return resolve(results[0])
-          } 
-
           return resolve(results);
         })
     })
   })
 }
 
+function saveCharacter(str) {
+  return str.replace(/[`~!@#$%^&*()_+-={}|[\]\:";'<>?,.//]*/g, " ")
+}
+
 module.exports = {
   queryDBpromise,
   queryDBresponse,
   multyQueryDBresponse,
+  saveCharacter,
 }

@@ -3,6 +3,7 @@
 网易云音乐 Node.js API service
 
 (加入了对MySQL的操作接口。课程项目用。)
+(The apis start with /local/ is connected to database.)
 
 
 <p>

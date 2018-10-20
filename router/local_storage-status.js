@@ -1,12 +1,39 @@
-const { multyQueryDBresponse } = require(`${__dirname}/../util/database.js`)
+const { queryDBpromise } = require(`${__dirname}/../util/database.js`)
 
 module.exports = (req, res, createWebAPIRequest, request) => {
 
-	multyQueryDBresponse(res, extractQuerySql())
+	const sqls = extractQuerySqls();
+	const cnt = Object.keys(sqls).length;
+	const _result = {};
+
+	let curCnt = 0;
+
+	const queryDone = () => {
+		curCnt++;
+		if (curCnt==cnt) {
+			res.send({
+				..._result,
+				code: 200,
+			})
+		}
+	}
+
+	Object.keys(sqls).forEach((key) => {
+		queryDBpromise(sqls[key])
+			.then((result) => {
+				_result[key] = result[0][Object.keys(result[0])[0]]
+				queryDone();
+			})
+			.catch((error) => {
+				_result[key] = 0;
+				queryDone();
+			})
+	})
+
 
 }
 
-function extractQuerySql() {
+function extractQuerySqls() {
 	return {
 		songs_cnt: `SELECT COUNT(*) FROM SONGS;`,
 		albums_cnt: `SELECT COUNT(*) FROM ALBUMS;`,
