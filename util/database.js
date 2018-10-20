@@ -30,12 +30,12 @@ function multyQueryDBresponse(res, sqls) {
 
   keys.forEach((key) => {
     queryDBpromise(sqls[key])
-      .then((_res) => {
-        results[key] = _res;
-        sqlDone();
-      })
-      .catch((_err) => {
-        errors[key] = _err;
+      .then(([error, results]) => {
+        if (!error) {
+          results[key] = results;
+        } else {
+          errors[key] = _err;
+        }
         sqlDone();
       })
   })
@@ -46,15 +46,15 @@ function queryDBresponse(res, sql, key = 'results') {
   const result = {}
 
   queryDBpromise(sql)
-    .then((_res) => {
-      result[key] = _res;
-      result.code = 200;
+    .then(([error, results]) => {
+      if (!error) {
+        result[key] = results;
+        result.code = 200;
+      } else {
+        result['error'] = error;
+        result.code = 502;
+      }
       res.send(result)
-    })
-    .catch((_err) => {
-      result['error'] = _err;
-      result.code = 502;
-      res.status(result.code).send(result)
     })
 
 }
@@ -62,12 +62,12 @@ function queryDBresponse(res, sql, key = 'results') {
 function queryDBpromise(sql) {
   return new Promise((resolve, reject) => {
     console.log(`[SQL QUERY]: exec "${sql}"`)
-    pool.getConnection((err, conn) => {
-      if (err) { return reject(err) }
-        conn.query(sql, (err, results, fields) => {
+    pool.getConnection((error, conn) => {
+      if (error) { return resolve([error, []]) }
+        conn.query(sql, (error, results, fields) => {
           conn.release();
-          if (err) { return reject(err)}
-          return resolve(results);
+          if (error) { return resolve([error, []])}
+          return resolve([null, results]);
         })
     })
   })

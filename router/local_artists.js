@@ -12,9 +12,18 @@ module.exports = async (req, res, createWebAPIRequest, request) => {
 		return;
 	}
 
-	const baseInfo = await queryDBpromise(getArtistBaseInfo(artist_id));
+	let [error, baseInfos] = await queryDBpromise(getArtistBaseInfo(artist_id));
+	const baseInfo = baseInfos[0]
 
-	const hotSongs = await queryDBpromise(appengHotSongs(artist_id));
+	let hotSongs;
+	[error, hotSongs] = await queryDBpromise(appengHotSongs(artist_id));
+
+	if (error) {
+		res.status(502).send({
+			error,
+			code: 502,
+		})
+	}
 
 	const songsCnt = hotSongs.length;
 	let curCnt = 0;
@@ -31,23 +40,23 @@ module.exports = async (req, res, createWebAPIRequest, request) => {
 	}
 
 	hotSongs.forEach((song) => {
-		queryDBpromise(appendSongAlbumQuery(song.id))
-			.then((result) => {
-				song.al = result[0];
-				queryDone();
-			})
-			.catch((error) => {
-				song.ar = {};
+		queryDBpromise(appendSongAlbumQuery(song.album_id))
+			.then(([error, results]) => {
+				if (!error) {
+					song.al = results[0];
+				} else {
+					song.ar = {};
+				}
 				queryDone();
 			})
 
 		queryDBpromise(appendSongArtistQuery(song.id))
-			.then((result) => {
-				song.ar = result;
-				queryDone();
-			})
-			.catch((error) => {
-				song.ar = [];
+			.then(([error, results]) => {
+				if (!error) {
+					song.ar = results;
+				} else {
+					song.ar = [];
+				}
 				queryDone();
 			})
 	})
@@ -83,10 +92,16 @@ function appengHotSongs(artist_id) {
 		_songs.song_id as id,
 		_songs.song_name as name,
 		_songs.album_id
-		FROM Artist_Songs _as 
-		inner join SONGS _songs on _songs.song_id=_as.song_id
-		left join ALBUMS _albums on _songs.album_id=_albums.album_id
-		WHERE _as.artist_id=${artist_id} AND _songs.is_hot=1
+		FROM (
+			SELECT *
+		    FROM SONGS 
+		    WHERE is_hot=1
+		) _songs
+		INNER JOIN (
+			SELECT *
+		    FROM Artist_Songs
+		    WHERE artist_id=${artist_id}
+		) _as ON _as.song_id=_songs.song_id
 	`;
 }
 

@@ -13,10 +13,43 @@ module.exports = async (req, res, createWebAPIRequest, request) => {
 
 	const result = {};
 
-	const albumBaseInfo = (await queryDBpromise(getAlbumQuery(album_id)))[0];
-	albumBaseInfo.artist = (await queryDBpromise(appendAlbumArtistQuery(albumBaseInfo.artist_id)))[0];
+	// const albumBaseInfo = (await queryDBpromise(getAlbumQuery(album_id)))[0];
+	// albumBaseInfo.artist = (await queryDBpromise(appendAlbumArtistQuery(albumBaseInfo.artist_id)))[0];
+	let [error, albumBaseInfos] = await queryDBpromise(getAlbumQuery(album_id));
 
-	const songs = await queryDBpromise(appendAlbumSongsQuery(album_id));
+	if (error) {
+		res.status(502).send({
+			error,
+			code: 502,
+		})
+		return; 
+	}
+
+	const albumBaseInfo = albumBaseInfos[0];
+
+	let _artist;
+	[error, _artist] = await queryDBpromise(appendAlbumArtistQuery(albumBaseInfo.artist_id));
+
+	if (error) {
+		res.status(502).send({
+			error,
+			code: 502,
+		})
+		return; 
+	}
+
+	albumBaseInfo.artist = _artist;
+
+	let songs;
+	[error, songs] = await queryDBpromise(appendAlbumSongsQuery(album_id));
+
+	if (error) {
+		res.status(502).send({
+			error,
+			code: 502,
+		})
+		return; 
+	}
 
 	const songsCnt = songs.length;
 	let curCnt = 0;
@@ -34,13 +67,12 @@ module.exports = async (req, res, createWebAPIRequest, request) => {
 
 	songs.forEach((song) => {
 		queryDBpromise(appendSongArtistQuery(song.id))
-			.then((result) => {
-				song.ar = result;
-				appendDensedAlbumToSong(albumBaseInfo, song);
-				queryDone();
-			})
-			.catch((error) => {
-				song.ar = [];
+			.then(([error, results]) => {
+				if (!error) {
+					song.ar = results;
+				} else {
+					song.ar = [];
+				}
 				appendDensedAlbumToSong(albumBaseInfo, song);
 				queryDone();
 			})

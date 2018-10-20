@@ -20,12 +20,12 @@ module.exports = (req, res, createWebAPIRequest, request) => {
 
 	Object.keys(sqls).forEach((key) => {
 		queryDBpromise(sqls[key])
-			.then((result) => {
-				_result[key] = result[0][Object.keys(result[0])[0]]
-				queryDone();
-			})
-			.catch((error) => {
-				_result[key] = 0;
+			.then(([error, results]) => {
+				if (!error) {
+					_result[key] = results[0][Object.keys(results[0])[0]]
+				} else {
+					_result[key] = 0;
+				}
 				queryDone();
 			})
 	})

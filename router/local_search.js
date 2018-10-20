@@ -26,7 +26,15 @@ module.exports = async (req, res, createWebAPIRequest, request) => {
 			limit ${limit} offset ${limit*offset};
 		`;
 
-		let _songs = await queryDBpromise(baseSql);
+		let [baseError, _songs] = await queryDBpromise(baseSql);
+
+		if (baseError) {
+			res.status(502).send({
+				error: baseError,
+				code: 502,
+			})
+			return ;
+		}
 
 		// console.log(_songs);
 
@@ -57,23 +65,22 @@ module.exports = async (req, res, createWebAPIRequest, request) => {
 			const curAlbumSql = appendAlbumQuery(song.album_id);
 
 			queryDBpromise(curAlbumSql)
-				.then((results) => {
-					song.album=results[0];
-					queryDone();
-				})
-				.catch((error) => {
-					song.album={};
+				.then(([error, results]) => {
+					if (!error) {
+						song.album=results[0];
+					} else {
+						song.album={};
+					}
 					queryDone();
 				})
 
 			queryDBpromise(curArtistSql)
-				.then((results) => {
-					song.artists=results;
-					queryDone();
-				})
-				.catch((error) => {
-					// console.log(error);
-					song.artists=[];
+				.then(([error, results]) => {
+					if (!error) {
+						song.artists=results;
+					} else {
+						song.artists=[];
+					}
 					queryDone();
 				})
 		})
@@ -101,7 +108,15 @@ module.exports = async (req, res, createWebAPIRequest, request) => {
 			limit ${limit} offset ${offset}
 		`;
 
-		const _albums = await queryDBpromise(baseSql);
+		const [baseError, _albums] = await queryDBpromise(baseSql);
+
+		if (baseError) {
+			res.status(502).send({
+				error: baseError,
+				code: 502,
+			})
+			return ;
+		}
 
 		// console.log(_albums);
 
@@ -129,12 +144,12 @@ module.exports = async (req, res, createWebAPIRequest, request) => {
 
 		_albums.forEach((album) => {
 			queryDBpromise(appendAlbumArtistQuery(album.artist_id))
-				.then((result) => {
-					album.artist = result;
-					queryDone();
-				})
-				.catch((error) => {
-					album.artist = {};
+				.then(([error, results]) => {
+					if (!error) {
+						album.artist = results[0];
+					} else {
+						album.artist = {};
+					}
 					queryDone();
 				})
 		})
@@ -158,9 +173,15 @@ module.exports = async (req, res, createWebAPIRequest, request) => {
 			limit ${limit} offset ${offset}
 		`;
 
-		const _artists = await queryDBpromise(baseSql);
+		const [baseError, _artists] = await queryDBpromise(baseSql);
 
-		// console.log(_artists);
+		if (baseError) {
+			res.status(502).send({
+				error: baseError,
+				code: 502,
+			})
+			return ;
+		}
 
 		res.send({
 			result: {
@@ -192,8 +213,7 @@ function appendAlbumArtistQuery(artist_id) {
 		_artists.artist_id as id,
 		_artists.artist_name as name
 		FROM ARTISTS _artists 
-		WHERE _artists.artist_id=${artist_id}
-		LIMIT 1;
+		WHERE _artists.artist_id=${artist_id};
 	`
 }
 
