@@ -30,7 +30,7 @@ function extractQuerySql(body) {
 	legitColumns.USRS.forEach((key) => {
 		if (body[key]) {
 			keys += `${key}, `;
-			values += `${body[key] ? '"'+body[key]+'"' : 'NULL'}, `;
+			values += `"${body[key]}", `;
 		}
 	})
 
