@@ -2,15 +2,17 @@ const { queryDBresponse } = require(`${__dirname}/../util/database.js`);
 
 module.exports = (req, res, createWebAPIRequest, request) => {
 
-	if (req.method != "POST") {
-		res.status(403).send({
-			message: 'Wrong Request Methods',
-			code: 403
-		})
-		return;
-	}
+	// if (req.method != "POST") {
+	// 	res.status(403).send({
+	// 		message: 'Wrong Request Methods',
+	// 		code: 403
+	// 	})
+	// 	return;
+	// }
 
-	const body = req.body;
+	// const body = req.body;
+
+	const body = req.query;
 
 	try {
 

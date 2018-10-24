@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.2/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.2c61cc4ac0948066447ee674101f41b1.js"
+  "/precache-manifest.f3e774b7a6b650417476a2e671497c99.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "pp-music-player"});
